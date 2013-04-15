@@ -1,16 +1,63 @@
-<h2>Change your password</h2>
+<div class="body-content-wrapper">
 
-<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :put }) do |f| %>
-  <%= devise_error_messages! %>
-  <%= f.hidden_field :reset_password_token %>
+  <div class="body-content-inner">
 
-  <div><%= f.label :password, "New password" %><br />
-  <%= f.password_field :password, :autofocus => true %></div>
+    <div class="body-content">
 
-  <div><%= f.label :password_confirmation, "Confirm new password" %><br />
-  <%= f.password_field :password_confirmation %></div>
+      <h2>Change your password</h2>
 
-  <div><%= f.submit "Change my password" %></div>
-<% end %>
+      <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => {:method => :put, :class => "form-horizontal" }) do |f| %>
 
-<%= render "devise/shared/links" %>
+        <%= devise_error_messages! %>
+        <%= f.hidden_field :reset_password_token %>
+
+        <div class="control-group input-group <%= "input-group-error" unless  @msg[:password].nil? %>">
+
+          <%= f.label :password, :class => "control-label" %>
+          <div class="controls">
+
+            <%= f.password_field :password, :class => "text", :maxlength => "40" %>
+
+          </div>
+          <% if not @msg[:password].nil? %>
+
+            <span id="password-error" class="inline-input-error-message">
+
+              <% @msg[:password].each do |msg| %>
+
+                <%= msg %>
+
+                <br />
+
+              <% end %>
+
+            </span>
+
+          <% end %>
+
+        </div>
+
+        <div class="control-group input-group">
+
+          <%= f.label :password_confirmation, :class => "control-label" %>
+          <div class="controls">
+
+            <%= f.password_field :password_confirmation, :class => "text", :maxlength => "40" %>
+
+          </div>
+
+        </div>
+
+        <div class="actions push-right-actions">
+
+          <%= f.submit "Change my password" %>
+
+        </div>
+
+      <% end %>
+
+    </div>
+
+  </div>
+
+</div>

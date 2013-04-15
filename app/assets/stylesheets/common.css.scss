@@ -1,0 +1,213 @@
+.body-content-wrapper{
+
+  top: 30px;
+  position: relative;
+  width: 700px;
+  float: left;
+
+  .body-content-inner {
+
+    background: none repeat scroll 0 0 #FFFFFF;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
+    padding: 13px 30px;
+
+    .body-content h2 {
+
+      margin: -13px -30px 20px;
+      background: -moz-linear-gradient(-90deg, #6A7176, #4D5256) repeat scroll 0 0 transparent;
+      background: -webkit-gradient(linear, left top, left bottom, from(#6A7176), to(#4D5256)); /* for webkit browsers */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6A7176', endColorstr='#4D5256');
+      border: medium none;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+      color: #FFFFFF;
+      font-size: 1em;
+      font-weight: bold;
+      line-height: 18px;
+      padding: 5px 10px 3px;
+      text-shadow: 0 1px 0 black;
+
+    }
+
+    .body-content input {
+
+      background: none repeat scroll 0 0 transparent;
+      box-shadow: none;
+      margin-bottom: 0;
+
+    }
+
+  }
+
+}
+.body-content .form-horizontal {
+
+  .actions input {
+
+    background: -moz-linear-gradient(-90deg, #838A90, #414549) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, left top, left bottom, from(#838A90), to(#414549)); /* for webkit browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#838A90', endColorstr='#414549');
+    border-color: #616A71 #484E53 #363B3F;
+    border-radius: 200px 200px 200px 200px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
+    color: #EFEFEF;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 12px;
+    padding: 7px 16px 6px;
+    text-decoration: none;
+    text-shadow: 0 1px 0 black;
+
+  }
+  .push-right-actions {
+    margin-left: 115px;
+  }
+
+}
+
+.body-content a {
+  float: right;
+  margin-top: 7px;
+}
+
+.body-content .form-horizontal label.control-label{
+  width: 100px;
+}
+.form-horizontal .controls {
+  margin-left: 115px;
+}
+.form-horizontal .actions {
+  margin-left: 20px;
+}
+.form-horizontal .controls input:not([type="checkbox"]), .form-horizontal .controls textarea{
+  width: 300px;
+}
+
+.input-group {
+  clear: left;
+  position: relative;
+}
+
+.input-group .label, .input-group label {
+  color: #333333;
+  display: inline-block;
+  float: left;
+  font-size: 12px;
+  margin-bottom: 0;
+  margin-right: 15px;
+  margin-top: 6px;
+  text-align: right;
+  width: 200px;
+}
+
+.input-group input{
+  border-color: #959595 #D3D3D3 #D3D3D3 #959595;
+  border-style: solid;
+  border-width: 1px;
+  color: #333333;
+  font-family: arial;
+  font-size: 12px;
+  margin: 0 0 0.2em;
+  padding: 6px;
+  float: left;
+  width: 235px;
+}
+.inline-notice {
+  clear: none;
+  float:left;
+  color: #939393;
+  margin: -2px 0 0;
+  width: 505px;
+}
+
+.inline-input-error-message {
+  border: 1px solid pink;
+  padding: 5px 8px;
+}
+
+.inline-disclaimer-message {
+  color: #939393;
+  float: left;
+  margin-top: -3px;
+  /*padding: 0 8px;*/
+}
+
+.inline-disclaimer-message, .inline-input-error-message {
+  clear: none;
+  margin-bottom: 0;
+  /*margin-left: 2px;   */
+  width: 505px;
+}
+#valid-email-disclaimer {
+  color: #333333;
+  display: none;
+}
+.inline-input-error-message {
+  background-color: #FFEEEE;
+  border-color: -moz-use-text-color pink pink;
+  border-right: 1px solid pink;
+  border-style: none solid solid;
+  border-width: 0 1px 1px;
+  clear: left;
+  color: #A80308;
+  float: left;
+  margin-bottom: 8px;
+  padding: 4px 8px;
+  margin-left:215px;
+}
+.input-group-error label {
+  color: #A80308 !important;
+}
+.input-group-error input.text, .input-group-error input.text:focus, .input-group-error textarea, .input-group-error textarea:focus, .input-group-error textarea.text, .input-group-error textarea.text:focus {
+  border-color: #A80308 !important;
+}
+.input-group input.error, .input-group input.error:focus, .input-group textarea.error, .input-group textarea.error:focus {
+  border-color: #A80308 !important;
+  margin-bottom: 0;
+}
+.inline-error, .input-group-error .inline-error {
+  color: #A80308 !important;
+}
+
+.inline-input-error-message{
+  float:left;
+  border: 1px solid pink;
+  padding: 5px 8px;
+}
+
+.inline-input-error-message {
+  background-color: #FFEEEE;
+  border: 1px solid pink;
+  clear: left;
+  color: #A80308;
+  float: left;
+  margin-bottom: 8px;
+  padding: 6px 8px;
+  border-radius: 5px 5px 5px 5px;
+}
+
+inline-disclaimer-message, .inline-input-error-message {
+  clear: none;
+  margin-bottom: 0;
+  margin-left: 2px;
+  width: 190px;
+}
+
+.fname_display{display:none;}
+
+.input-group-error .text { background-color:pink;}
+
+.radio-controls{ padding-top: 5px; }
+.radio-controls input {
+  top: 10px;
+  position: relative;
+}
+
+.radio-controls .radio-label{
+  width: 65px;
+  text-align: left;
+}

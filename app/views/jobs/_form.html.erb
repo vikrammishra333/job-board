@@ -1,53 +1,98 @@
-<%= form_for(@job) do |f| %>
-  <% if @job.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@job.errors.count, "error") %> prohibited this job from being saved:</h2>
+<%= form_for(@job, :html => {:class => "form-horizontal"}) do |f| %>
 
-      <ul>
-      <% @job.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
+  <% customize_error_message(@job)%>
+
+  <%= f.hidden_field :company_id %>
+  <div class="control-group input-group <%= "input-group-error" unless  @msg[:job_title].nil? %> ">
+
+    <%= f.label :job_title, :class => "control-label" %>
+    <div class="controls">
+
+      <%= f.text_field :job_title, :class => "text", :maxlength => "40" %>
+      <%  if not @msg[:job_title].nil? %>
+
+       <span class="inline-input-error-message">
+         <%= @msg[:job_title].join  %>
+       </span>
+
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :job_title %><br />
-    <%= f.text_field :job_title %>
+    </div>
+
+  </div>
+  <div class="control-group input-group">
+
+    <%= f.label :job_description, :class => "control-label" %>
+    <div class="controls">
+
+      <%= f.text_area :job_description, :class => "text", :rows => "5" %>
+
+    </div>
+
+  </div>
+  <div class="control-group input-group">
+
+    <%= f.label :job_code, :class => "control-label" %>
+    <div class="controls">
+
+      <%= f.text_field :job_code, :class => "text", :maxlength => "40" %>
+
+    </div>
+
+  </div>
+  <div class="control-group input-group">
+
+    <%= f.label :min_exp_req, "Minimum Experience", :class => "control-label" %>
+    <div class="controls">
+
+      <%= f.number_field :min_exp_req, :class => "text", :maxlength => "40" %>
+
+    </div>
+
+  </div>
+  <div class="control-group input-group">
+
+    <%= f.label :max_exp_req, "Maximum Experience", :class => "control-label" %>
+    <div class="controls">
+
+      <%= f.number_field :max_exp_req, :class => "text", :maxlength => "40" %>
+
+    </div>
+
+  </div>
+  <div class="control-group input-group">
+
+    <%= f.label :exp_in_tech, "Main Area of Expertise", :class => "control-label" %>
+    <div class="controls">
+
+      <%= f.text_field :exp_in_tech, :class => "text", :maxlength => "40" %>
+
+    </div>
+
   </div>
   <div class="field">
-    <%= f.label :job_description %><br />
-    <%= f.text_area :job_description %>
+    <%= f.label :job_valid_till, "Job Expiry Date", :class => "control-label" %>
+    <div class="controls">
+
+      <%= f.date_select :job_valid_till %>
+
+    </div>
+
   </div>
-  <div class="field">
-    <%= f.label :job_code %><br />
-    <%= f.text_field :job_code %>
+  <div class="control-group input-group">
+
+    <%= f.label :job_location, :class => "control-label" %>
+    <div class="controls">
+
+      <%= f.text_field :job_location, :class => "text", :maxlength => "40" %>
+
+    </div>
+
   </div>
-  <div class="field">
-    <%= f.label :min_exp_req %><br />
-    <%= f.number_field :min_exp_req %>
-  </div>
-  <div class="field">
-    <%= f.label :max_exp_req %><br />
-    <%= f.number_field :max_exp_req %>
-  </div>
-  <div class="field">
-    <%= f.label :exp_in_tech %><br />
-    <%= f.text_field :exp_in_tech %>
-  </div>
-  <div class="field">
-    <%= f.label :job_valid_till %><br />
-    <%= f.date_select :job_valid_till %>
-  </div>
-  <div class="field">
-    <%= f.label :job_location %><br />
-    <%= f.text_field :job_location %>
-  </div>
-  <div class="field">
-    <%= f.label :company_id %><br />
-    <%= f.text_field :company_id %>
-  </div>
-  <div class="actions">
+  <div class="actions push-right-actions">
+
     <%= f.submit %>
+
   </div>
+
 <% end %>

@@ -85,17 +85,17 @@
   </div>
   <% if not @msg[:password].nil? %>
 
-            <span id="password-error" class="inline-input-error-message">
+    <span id="password-error" class="inline-input-error-message">
 
-              <% @msg[:password].each do |msg| %>
+      <% @msg[:password].each do |msg| %>
 
-                <%= msg %>
+        <%= msg %>
 
-                <br />
+        <br />
 
-              <% end %>
+      <% end %>
 
-            </span>
+    </span>
 
   <% end %>
 

@@ -1,6 +1,20 @@
-<h1>Editing job</h1>
+<div class="body-content-wrapper">
 
-<%= render 'form' %>
+  <div class="body-content-inner">
 
-<%= link_to 'Show', @job %> |
-<%= link_to 'Back', jobs_path %>
+    <div class="body-content">
+
+      <h2>Edit job <%= @job.job_title.capitalize  %></h2>
+
+      <%= render 'form' %>
+
+      <%= link_to 'Show', @job %> |
+      <%= link_to 'Back', jobs_path %>
+
+    </div>
+
+  </div>
+
+</div>
+
+
