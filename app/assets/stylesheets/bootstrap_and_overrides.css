@@ -1,0 +1,54 @@
+/*
+  =require twitter-bootstrap-static/bootstrap
+
+  Use Font Awesome icons (default)
+  To use Glyphicons sprites instead of Font Awesome, replace with "require twitter-bootstrap-static/sprites"
+  =require twitter-bootstrap-static/fontawesome
+  */
+
+.row-fluid{
+  min-height: 550px;
+}
+
+.navbar .nav > li > a {
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+
+.well.sidebar-nav {
+    margin: 30px auto;
+    min-height: 400px;
+}
+
+.sidebar-div h2.sidebar, .login h2  {
+    background: -moz-linear-gradient(-90deg, #6A7176, #4D5256) repeat scroll 0 0 transparent;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6A7176), to(#4D5256)); /* for webkit browsers */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6A7176', endColorstr='#4D5256');
+    border: medium none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    color: #FFFFFF;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 18px;
+    margin: -18px -34px 20px;
+    padding: 5px 10px 3px;
+    text-shadow: 0 1px 0 black;
+}
+
+.alert {
+  width: 70%;
+  position: absolute;
+  top: 53px;
+  left: 26.25%;
+}
+
+.footer {
+  left: -20px;
+  bottom: -20px;
+  position: relative;
+  clear:both;
+  margin-top:30px;
+  border-top: 1px solid #6A7176;
+  text-align: center;
+  width: 103%;
+}

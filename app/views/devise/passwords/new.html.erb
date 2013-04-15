@@ -1,0 +1,51 @@
+<div class="login-content-wrapper">
+
+  <div class="login-content">
+
+    <div class="login">
+
+      <h2>Forgot Your Password?</h2>
+
+      <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => "form-horizontal" }) do |f| %>
+
+        <% devise_error_messages! %>
+
+        <div class="control-group input-group <%= "input-group-error" unless  @msg[:email].nil? %>">
+
+          <%= f.label :email, :class => "control-label" %>
+          <div class="controls">
+
+            <%= f.email_field :email, :autofocus => true %>
+            <%  if not @msg[:email].nil? %>
+
+              <span id="email-error" class="inline-input-error-message">
+
+                <%= @msg[:email].join %>
+
+              </span>
+
+            <% end %>
+            <span id="email-disclaimer" class="inline-disclaimer-message">
+
+              <span id="pending-email-disclaimer">An email will be sent to this email address.</span>
+
+            </span>
+
+          </div>
+
+        </div>
+        <div class="actions push-right-actions">
+
+          <%= f.submit "Send me reset password instructions" %>
+          
+        </div>
+
+      <% end %>
+
+      <%#= render "devise/shared/links" %>
+
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,54 @@
+<div class="control-group input-group <%= "input-group-error" unless  @msg[:name].nil? %>">
+
+  <%= f.label :name, "Company Name", :class => "control-label" %>
+  <div class="controls">
+
+    <%= f.text_field :name, :class => "text", :maxlength => "50"  %>
+
+    <%  if not @msg[:name].nil? %>
+
+      <span id="last-name-error" class="inline-input-error-message">
+        <%= @msg[:name].join %>
+      </span>
+
+    <% end  %>
+
+    <span id="first-name-disclaimer " class="inline-notice">
+      A job seeker will search for this name in the web.
+    </span>
+
+  </div>
+
+</div>
+<div class="control-group input-group">
+
+  <%= f.label :description, :class => "control-label" %>
+  <div class="controls">
+
+    <%= f.text_area :description, :class => "text", :rows => "5" %>
+
+  </div>
+
+</div>
+<div class="control-group input-group <%= "input-group-error" unless  @msg[:url].nil? %>">
+
+  <%= f.label :url, "Company URL", :class => "control-label" %>
+  <div class="controls">
+
+    <%= f.text_field :url, :class => "text", :maxlength => "50"  %>
+
+    <%  if not @msg[:url].nil? %>
+
+    <span id="last-name-error" class="inline-input-error-message">
+      <%= @msg[:url].join %>
+    </span>
+
+    <% end  %>
+
+    <span id="first-name-disclaimer " class="inline-notice">
+      URL in the form of http://www.example.com
+    </span>
+
+  </div>
+
+</div>

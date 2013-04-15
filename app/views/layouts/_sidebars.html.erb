@@ -1,0 +1,16 @@
+<div class="sidebar-div">
+
+  <h2 class="sidebar">Sidebar</h2>
+
+  <% if current_user %>
+
+  
+  <% else %>
+
+    <li><%= link_to "Sign In", new_user_session_path  %></li>
+    <li><%= link_to "Register", new_user_registration_path  %></li>
+    <li><%= link_to "Forget Password", new_user_password_path  %></li>
+
+  <% end %>
+
+</div>

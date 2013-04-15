@@ -1,0 +1,13 @@
+<%= form_for(@company, :html => {:class => "form-horizontal"}) do |f| %>
+
+  <% customize_error_message(@company)  %>
+
+  <%= render "companies/companies_field" %>
+
+  <div class="actions">
+
+    <%= f.submit %>
+
+  </div>
+
+<% end %>

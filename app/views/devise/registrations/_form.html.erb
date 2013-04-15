@@ -1,0 +1,33 @@
+<h2>Register To Job Board</h2>
+
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name),:html=>{:class=>"form-horizontal"}) do |f| %>
+
+  <%  customize_error_message(resource) %>
+
+  <% if resource.user_type == "employer" %>
+
+    <%= field_set_tag("Company Information") do %>
+
+      <%= f.fields_for :company do |f| %>
+
+        <%= render "companies/companies_field", :f => f %>
+
+      <% end %>
+
+    <% end %>
+
+  <% end %>
+
+  <%= field_set_tag("User Information") do %>
+
+    <%= render "devise/registrations/user_registration_form", :f => f %>
+
+  <% end %>
+
+  <div class="actions push-right-actions">
+
+    <%= f.submit "Register" %>
+
+  </div>
+
+<% end %>
