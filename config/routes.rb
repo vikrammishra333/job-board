@@ -1,5 +1,8 @@
 JobBoard::Application.routes.draw do
   
+  resources :jobs
+
+
   resources :companies
 
   devise_for :users, :controllers => {:registrations => "registrations"}
