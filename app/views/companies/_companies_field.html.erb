@@ -1,3 +1,16 @@
+<div class="control-group input-group">
+
+  <%= f.label :company_type, "Company Type", :class => "control-label control-radio-label" %>
+  <div class="controls radio-controls">
+
+    <% ["company", "constultant"].each do |item| %>
+      <%= f.radio_button :company_type, item, :class => "user-type" %>
+      <%= f.label :company_type, item.capitalize, :class => "radio-label" %>
+    <% end %>
+
+  </div>
+
+</div>
 <div class="control-group input-group <%= "input-group-error" unless  @msg[:name].nil? %>">
 
   <%= f.label :name, "Company Name", :class => "control-label" %>

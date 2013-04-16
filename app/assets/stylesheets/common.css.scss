@@ -9,7 +9,8 @@
 
     background: none repeat scroll 0 0 #FFFFFF;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.37);
-    padding: 13px 30px;
+    padding: 13px 30px 30px;
+    min-height: 400px;
 
     .body-content h2 {
 
@@ -39,43 +40,76 @@
   }
 
 }
-.body-content .form-horizontal {
+.body-content {
 
-  .actions input {
-
-    background: -moz-linear-gradient(-90deg, #838A90, #414549) repeat scroll 0 0 transparent;
-    background: -webkit-gradient(linear, left top, left bottom, from(#838A90), to(#414549)); /* for webkit browsers */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#838A90', endColorstr='#414549');
-    border-color: #616A71 #484E53 #363B3F;
-    border-radius: 200px 200px 200px 200px;
-    border-style: solid;
-    border-width: 1px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
-    color: #EFEFEF;
-    cursor: pointer;
-    display: inline-block;
-    font-family: Helvetica,Arial,sans-serif;
-    font-size: 1em;
-    font-weight: bold;
-    line-height: 12px;
-    padding: 7px 16px 6px;
-    text-decoration: none;
-    text-shadow: 0 1px 0 black;
-
+  a {
+    float: right;
+    margin-top: 7px;
   }
-  .push-right-actions {
-    margin-left: 115px;
+  .form-horizontal {
+
+    .input-group-error .controls .text { background-color:pink;}
+
+    fieldset .radio-controls {
+
+      padding-top: 5px;
+
+      input {
+
+        top: 10px;
+        position: relative;
+
+      }
+
+      .radio-label{
+
+        width: 65px;
+        text-align: left;
+
+      }
+
+    }
+    .actions input {
+
+      background: -moz-linear-gradient(-90deg, #838A90, #414549) repeat scroll 0 0 transparent;
+      background: -webkit-gradient(linear, left top, left bottom, from(#838A90), to(#414549)); /* for webkit browsers */
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#838A90', endColorstr='#414549');
+      border-color: #616A71 #484E53 #363B3F;
+      border-radius: 200px 200px 200px 200px;
+      border-style: solid;
+      border-width: 1px;
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1), 0 1px 0 0 rgba(255, 255, 255, 0.2) inset;
+      color: #EFEFEF;
+      cursor: pointer;
+      display: inline-block;
+      font-family: Helvetica,Arial,sans-serif;
+      font-size: 1em;
+      font-weight: bold;
+      line-height: 12px;
+      padding: 7px 16px 6px;
+      text-decoration: none;
+      text-shadow: 0 1px 0 black;
+
+    }
+    .push-right-actions {
+      margin-left: 115px;
+    }
+
+    .date-select {
+      width: 101.5px;
+    }
+
   }
 
 }
 
-.body-content a {
-  float: right;
-  margin-top: 7px;
-}
 
 .body-content .form-horizontal label.control-label{
   width: 100px;
+
+}
+.body-content .form-horizontal label.control-label:not(.control-radio-label) {
+  padding: 0;
 }
 .form-horizontal .controls {
   margin-left: 115px;
@@ -162,6 +196,7 @@
 .input-group-error label {
   color: #A80308 !important;
 }
+
 .input-group-error input.text, .input-group-error input.text:focus, .input-group-error textarea, .input-group-error textarea:focus, .input-group-error textarea.text, .input-group-error textarea.text:focus {
   border-color: #A80308 !important;
 }
@@ -195,19 +230,4 @@ inline-disclaimer-message, .inline-input-error-message {
   margin-bottom: 0;
   margin-left: 2px;
   width: 190px;
-}
-
-.fname_display{display:none;}
-
-.input-group-error .text { background-color:pink;}
-
-.radio-controls{ padding-top: 5px; }
-.radio-controls input {
-  top: 10px;
-  position: relative;
-}
-
-.radio-controls .radio-label{
-  width: 65px;
-  text-align: left;
 }

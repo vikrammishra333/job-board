@@ -1,20 +1,19 @@
-<p id="notice"><%= notice %></p>
-
+<h2><%= @company.name %></h2>
 <p>
-  <b>Name:</b>
+  <b>Company Name:</b>
   <%= @company.name %>
 </p>
 
 <p>
-  <b>Description:</b>
+  <b>About <%= @company.name %>:</b>
   <%= @company.description %>
 </p>
 
 <p>
-  <b>Url:</b>
+  <b>Company Url:</b>
   <%= @company.url %>
 </p>
 
 
-<%= link_to 'Edit', edit_company_path(@company) %> |
-<%= link_to 'Back', companies_path %>
+<%#= link_to 'Edit', edit_company_path(@company) %>
+<%#= link_to 'Back', companies_path %>

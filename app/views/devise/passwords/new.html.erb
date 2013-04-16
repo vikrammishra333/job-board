@@ -1,51 +1,37 @@
-<div class="body-content-wrapper">
+<h2>Forgot Your Password?</h2>
 
-  <div class="body-content-inner">
+<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => "form-horizontal" }) do |f| %>
 
-    <div class="body-content">
+  <% devise_error_messages! %>
 
-      <h2>Forgot Your Password?</h2>
+  <div class="control-group input-group <%= "input-group-error" unless  @msg[:email].nil? %>">
 
-      <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post, :class => "form-horizontal" }) do |f| %>
+    <%= f.label :email, :class => "control-label" %>
+    <div class="controls">
 
-        <% devise_error_messages! %>
+      <%= f.email_field :email, :autofocus => true %>
+      <%  if not @msg[:email].nil? %>
 
-        <div class="control-group input-group <%= "input-group-error" unless  @msg[:email].nil? %>">
+        <span id="email-error" class="inline-input-error-message">
 
-          <%= f.label :email, :class => "control-label" %>
-          <div class="controls">
+          <%= @msg[:email].join %>
 
-            <%= f.email_field :email, :autofocus => true %>
-            <%  if not @msg[:email].nil? %>
-
-              <span id="email-error" class="inline-input-error-message">
-
-                <%= @msg[:email].join %>
-
-              </span>
-
-            <% end %>
-            <span id="email-disclaimer" class="inline-disclaimer-message">
-
-              <span id="pending-email-disclaimer">An email will be sent to this email address.</span>
-
-            </span>
-
-          </div>
-
-        </div>
-        <div class="actions push-right-actions">
-
-          <%= f.submit "Send me reset password instructions" %>
-          
-        </div>
+        </span>
 
       <% end %>
+      <span id="email-disclaimer" class="inline-disclaimer-message">
 
-      <%#= render "devise/shared/links" %>
+        <span id="pending-email-disclaimer">An email will be sent to this email address.</span>
+
+      </span>
 
     </div>
 
   </div>
+  <div class="actions push-right-actions">
 
-</div>
+    <%= f.submit "Send me reset password instructions" %>
+
+  </div>
+
+<% end %>

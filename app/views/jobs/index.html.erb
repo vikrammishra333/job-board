@@ -1,7 +1,9 @@
-<h1>Listing jobs</h1>
+<h2>Listing jobs</h2>
 
-<table>
-  <tr>
+<table class="table table-bordered table-data-table">
+
+  <thead>
+
     <th>Job title</th>
     <th>Job description</th>
     <th>Job code</th>
@@ -14,24 +16,33 @@
     <th></th>
     <th></th>
     <th></th>
-  </tr>
 
-<% @jobs.each do |job| %>
-  <tr>
-    <td><%= job.job_title %></td>
-    <td><%= job.job_description %></td>
-    <td><%= job.job_code %></td>
-    <td><%= job.min_exp_req %></td>
-    <td><%= job.max_exp_req %></td>
-    <td><%= job.exp_in_tech %></td>
-    <td><%= job.job_valid_till %></td>
-    <td><%= job.job_location %></td>
-    <td><%= job.company_id %></td>
-    <td><%= link_to 'Show', job %></td>
-    <td><%= link_to 'Edit', edit_job_path(job) %></td>
-    <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
-<% end %>
+  </thead>
+  <tbody>
+
+    <% @jobs.each do |job| %>
+
+      <tr>
+
+        <td><%= job.job_title %></td>
+        <td><%= job.job_description %></td>
+        <td><%= job.job_code %></td>
+        <td><%= job.min_exp_req %></td>
+        <td><%= job.max_exp_req %></td>
+        <td><%= job.exp_in_tech %></td>
+        <td><%= job.job_valid_till %></td>
+        <td><%= job.job_location %></td>
+        <td><%= job.company_id %></td>
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+
+      </tr>
+
+    <% end %>
+
+  </tbody>
+
 </table>
 
 <br />

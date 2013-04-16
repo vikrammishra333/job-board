@@ -18,6 +18,14 @@ class User < ActiveRecord::Base
   belongs_to :company
   belongs_to :user_type
 
+  has_many :jobs
+
   accepts_nested_attributes_for :company
+
+  def name
+
+    first_name+" "+last_name
+
+  end
   
 end

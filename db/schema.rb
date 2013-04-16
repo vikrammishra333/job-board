@@ -11,14 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130415131848) do
+ActiveRecord::Schema.define(:version => 20130416104201) do
 
   create_table "companies", :force => true do |t|
     t.string   "name"
     t.text     "description"
     t.string   "url"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.string   "company_type"
   end
 
   create_table "jobs", :force => true do |t|
@@ -33,6 +34,7 @@ ActiveRecord::Schema.define(:version => 20130415131848) do
     t.integer  "company_id"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+    t.integer  "user_id"
   end
 
   add_index "jobs", ["company_id"], :name => "index_jobs_on_company_id"

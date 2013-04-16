@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -33,65 +35,112 @@
     <!-- For all other devices -->
     <!-- Size should be 32 x 32 pixels -->
     <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
+
   </head>
   <body>
 
     <div class="navbar navbar-inverse">
+
       <div class="navbar-inner">
+
         <div class="container-fluid">
+
           <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
+
           </a>
           <a class="brand" href="#">JobBoard</a>
           <div class="container-fluid nav-collapse">
+
             <ul class="nav pull-right">
 
-              <% if current_user %>
+              <% if user_signed_in? %>
 
-                <li><%= link_to "rtr", "/path1"  %></li>
+                <li><%= link_to "Welcome #{current_user.first_name}", "/path1"  %></li>
                 <li>
+
                   <a rel="nofollow" data-method="delete" href="/users/sign_out">
+
                     <span class="label label-important">Log out</span>
+
                   </a>
+
                 </li>
                 <li><%= link_to gravatar_image_tag(current_user.email)  %></li>
 
               <% end %>
+
             </ul>
+
           </div><!--/.nav-collapse -->
+
         </div>
+
       </div>
+
     </div>
 
     <div class="container-fluid">
+
       <div class="row-fluid">
+
         <div class="span3">
+
           <div class="well sidebar-nav">
+
             <ul class="nav nav-list">
+
               <%= render :partial => "layouts/sidebars" %>
+
             </ul>
+
           </div><!--/.well -->
+
         </div><!--/span-->
         <div class="span9">
+
           <%= bootstrap_flash %>
-          <%= yield %>
+
+          <div class="body-content-wrapper">
+
+            <div class="body-content-inner">
+
+              <div class="body-content">
+
+                <%= yield %>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
+
       </div><!--/row-->
 
       <footer class="footer">
         
         <div class="navbar navbar-inverse">
+
           <div class="navbar-inner">
+
             <div class="container-fluid">
+
               <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
+
               </a>
+
               <a class="brand" href="#">Mindfire Solutions</a>
               <div class="container-fluid nav-collapse">
+
                 &copy;All Rights Reserved
                 <ul class="nav pull-right">
                   
@@ -99,10 +148,15 @@
                   <li><%= link_to "About Us", "/path1"  %></li>
 
                 </ul>
+
               </div><!--/.nav-collapse -->
+
             </div>
+
           </div>
+
         </div>
+
       </footer>
 
     </div> <!-- /container -->
