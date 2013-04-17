@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+  include JobsHelper
 
   before_filter :authenticate_user!
 

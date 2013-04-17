@@ -4,6 +4,23 @@
 
   <%= f.hidden_field :company_id, :value => "#{current_user.company.id}" %>
   <%= f.hidden_field :user_id, :value => "#{current_user.id}" %>
+  <div class="control-group input-group <%= "input-group-error" unless  @msg[:job_headline].nil? %> ">
+
+    <%= f.label :job_headline, :class => "control-label" %>
+    <div class="controls">
+
+      <%= f.text_field :job_headline, :class => "text" %>
+      <%  if not @msg[:job_headline].nil? %>
+
+       <span class="inline-input-error-message">
+         <%= @msg[:job_headline].join  %>
+       </span>
+
+      <% end %>
+
+    </div>
+
+  </div>
   <div class="control-group input-group <%= "input-group-error" unless  @msg[:job_title].nil? %> ">
 
     <%= f.label :job_title, :class => "control-label" %>
@@ -41,32 +58,44 @@
     </div>
 
   </div>
-  <div class="control-group input-group">
+  <div class="control-group input-group <%= "input-group-error" unless @msg[:max_exp_req].nil?%> ">
 
-    <%= f.label :min_exp_req, "Minimum Experience", :class => "control-label" %>
+    <%= f.label :min_exp_req, "Experience Required", :class => "control-label" %>
     <div class="controls">
 
-      <%= f.number_field :min_exp_req, :class => "text", :maxlength => "40" %>
+      <div class="select-div">
+        <%= f.select(:min_exp_req, JobsHelper::EXP_YEAR_ARRAY, {:prompt => "Min Exp"}, {:class => "select-field text", :id => "job-min-exp-req"}) %> To
+      </div>
+      <div class="select-div select-div-right">
+        <%= f.select(:max_exp_req, JobsHelper::EXP_YEAR_ARRAY, {:prompt => "Max Exp"}, {:class => "select-field text", :id => "job-max-exp-req"}) %>
+      </div>
+
+      <%  if not @msg[:max_exp_req].nil? %>
+
+       <span class="inline-input-error-message job-select-error">
+
+         <%= @msg[:max_exp_req].join  %>
+
+       </span>
+
+      <% end %>
 
     </div>
 
   </div>
-  <div class="control-group input-group">
-
-    <%= f.label :max_exp_req, "Maximum Experience", :class => "control-label" %>
-    <div class="controls">
-
-      <%= f.number_field :max_exp_req, :class => "text", :maxlength => "40" %>
-
-    </div>
-
-  </div>
-  <div class="control-group input-group">
+  <div class="control-group input-group <%= "input-group-error" unless  @msg[:exp_in_tech].nil? %> ">
 
     <%= f.label :exp_in_tech, "Main Area of Expertise", :class => "control-label" %>
     <div class="controls">
 
       <%= f.text_field :exp_in_tech, :class => "text", :maxlength => "40" %>
+      <%  if not @msg[:exp_in_tech].nil? %>
+
+       <span class="inline-input-error-message">
+         <%= @msg[:exp_in_tech].join  %>
+       </span>
+
+      <% end %>
 
     </div>
 

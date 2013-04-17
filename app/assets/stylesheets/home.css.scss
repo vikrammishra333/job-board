@@ -7,3 +7,33 @@
   width: 100%;
 
 }
+
+.jobs-division div.particular-job {
+
+  border-bottom: 1px solid #4D5256;
+  min-height: 50px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+
+  a {
+
+    float: none;
+
+  }
+  .job-title {
+
+    display: block;
+    span{
+      font-weight: bold;
+      margin-right: 10px;
+    }
+  }
+
+  .job-description {
+
+    display: block;
+    text-align: justify;
+
+  }
+
+}

@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h2><%= @job.job_title %> at <%= @job.company.name %> </h2>
 
 <p>
   <b>Job title:</b>
@@ -46,5 +46,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_job_path(@job) %> |
-<%= link_to 'Back', jobs_path %>
+<%#= link_to 'Edit', edit_job_path(@job) %>
+<%#= link_to 'Back', jobs_path %>

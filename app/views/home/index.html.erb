@@ -1,3 +1,38 @@
-<h2>Jobs List</h2>
+<h2>Latest Jobs List</h2>
+<div class="jobs-division">
+
+    <% @jobs.each do |job| %>
+
+      <div class="particular-job">
+
+        <div class="job-title">
+
+          <span><%= link_to job.job_headline, job %></span>
+          <span>Expires On: <%= job.job_valid_till.strftime("%B %d, %Y") %></span>
+
+        </div>
+        <div class="job-description">
+
+          <% if job.job_description.length > 300 %>
+
+            <%= job.job_description[0..300]+"..." %>
+
+          <% else %>
+
+            <%= job.job_description %>
+
+          <% end %>
+
+          <%= link_to "See Details", job %>
+
+        </div>
+
+
+      </div>
+
+    <% end %>
+
+
+</div>
 
 
